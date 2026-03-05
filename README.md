@@ -4,6 +4,8 @@ A modern product showcase storefront built with **Next.js (App Router)**, **Type
 
 It fetches products from the **FakeStore API**, displays them in a responsive animated grid, supports **search/sort/category filtering**, includes a **dark mode toggle** (persisted), and has a newsletter form with validation + a polished success animation.
 
+Built as an assignment for TNIT26.
+
 ## Features
 
 - Responsive product grid

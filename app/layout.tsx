@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'TNIT Product Showcase',
+  title: 'Product Showcase',
   description: 'Premium product grid with newsletter subscription.'
 };
 
