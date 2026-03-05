@@ -26,7 +26,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-900/10 bg-white/70 backdrop-blur dark:border-white/10 dark:bg-bg-900/80">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="#" className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white">
-          TNIT Showcase
+          Product Showcase
         </a>
         <nav className="flex items-center gap-3">
           <a
