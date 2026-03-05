@@ -56,7 +56,3 @@ Open:
 - `npm run build` - production build
 - `npm run start` - start production server
 - `npm run lint` - run lint
-
-## License
-
-MIT
