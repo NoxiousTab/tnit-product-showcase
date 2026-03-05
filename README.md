@@ -29,7 +29,13 @@ Built as an assignment for TNIT26.
 - Sonner (toast library is installed; success toast for newsletter is disabled in favor of the success overlay)
 - Lucide React (icons)
 
-## Getting Started
+## Deployed on Vercel
+
+
+[https://tnit-product-showcase.vercel.app](https://tnit-product-showcase.vercel.app)
+
+
+## Run Locally
 
 ### 1) Install dependencies
 
