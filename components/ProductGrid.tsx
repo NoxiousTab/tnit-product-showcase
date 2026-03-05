@@ -28,6 +28,17 @@ export default function ProductGrid() {
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
 
   useEffect(() => {
+    if (!activeProduct) return;
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [activeProduct]);
+
+  useEffect(() => {
     const controller = new AbortController();
 
     async function load() {
@@ -189,7 +200,7 @@ export default function ProductGrid() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 14, scale: 0.98 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-900/10 bg-white shadow-xl dark:border-white/10 dark:bg-bg-950"
+              className="flex max-h-[calc(100vh-2rem)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-slate-900/10 bg-white shadow-xl dark:border-white/10 dark:bg-bg-950"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between border-b border-slate-900/10 px-5 py-4 dark:border-white/10">
@@ -208,7 +219,7 @@ export default function ProductGrid() {
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 gap-6 p-5 sm:grid-cols-2">
+              <div className="grid flex-1 grid-cols-1 gap-6 overflow-hidden p-5 sm:grid-cols-2">
                 <div className="relative aspect-square overflow-hidden rounded-xl border border-slate-900/10 bg-slate-900/5 dark:border-white/10 dark:bg-white/5">
                   <Image
                     src={activeProduct.image}
@@ -224,7 +235,11 @@ export default function ProductGrid() {
                     ${activeProduct.price.toFixed(2)}
                   </div>
 
-                  <div className="text-sm text-slate-700 dark:text-white/80">
+                  <div
+                    className={`text-sm text-slate-700 break-words dark:text-white/80 ${
+                      activeProduct.description.length > 220 ? 'max-h-48 overflow-y-auto pr-2' : ''
+                    }`}
+                  >
                     {activeProduct.description}
                   </div>
 
